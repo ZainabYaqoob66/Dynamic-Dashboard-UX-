@@ -1,0 +1,63 @@
+<div class="card border-0">
+  <div class="bg-transparent border-0 mb-2 d-flex justify-content-between align-items-center">
+    <h5 class="card-title mb-0 fw-bold">Normal Card</h5>
+    <button class="btn btn-sm btn-light border-0" (click)="hideCardDetails()" aria-label="Close">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+    <div class="card-body">
+        <form [formGroup]="AddNormalCard">
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Card Title:</label>
+                <input type="text" 
+                       class="form-control focus-black-border" 
+                       name="cardTitle" 
+                       formControlName="cardTitle" 
+                       placeholder="Enter card title">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Card Description:</label>
+                <textarea class="form-control focus-black-border" 
+                          name="cardDescription" 
+                          formControlName="cardDescription" 
+                          rows="3"
+                          placeholder="Enter card description"></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Url:</label>
+                <input type="text" 
+                       class="form-control focus-black-border" 
+                       name="url" 
+                       formControlName="url" 
+                       placeholder="Enter URL">
+            </div>
+            <div class="mb-3">
+                <label class="form-label fw-semibold">Icon:</label>
+                <select class="form-select focus-black-border" 
+                        formControlName="icon">
+                    <option *ngFor="let option of iconOptions" 
+                            [value]="option.value">
+                        <i [ngClass]="option.value"></i> {{ option.label }}
+                    </option>
+                </select>
+            </div>
+            <div class="d-flex gap-2 mt-3">
+                <button (click)="submitNormalCard()" 
+                        [disabled]="AddNormalCard.invalid"
+                        class="btn btn-primary">
+                    Add
+                </button>
+                <button (click)="hideCardDetails()" 
+                        class="btn btn-secondary fw-semibold">
+                    Cancel
+                </button>
+                <button *ngIf="editCard" 
+                        (click)="deleteCard()" 
+                        class="btn btn-danger">
+                    Delete
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
