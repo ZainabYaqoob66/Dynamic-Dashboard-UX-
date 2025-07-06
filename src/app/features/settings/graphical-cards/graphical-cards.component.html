@@ -1,1 +1,70 @@
-<p>graphical-cards works!</p>
+<div class="card border-0 green-gradient-card mt-3 p-4 rounded-4">
+    <div class="d-flex align-items-center gap-3">
+        <button class="btn btn-sm btn-light border-0 rounded-3 p-2 px-3" style="background-color: #40C59A;">
+            <i class="bi bi-graph-down text-white fs-4"></i>
+        </button>
+        <div class="flex-grow-1">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0 fw-bold p-1">
+                    Create Graphical Card
+                </h5>
+                <span class="text-white ms-2" style="cursor: pointer;">
+                    <i class="bi bi-x fs-5"></i>
+                </span>
+            </div>
+            <i class="bi bi-star-fill"></i>
+            <span class="mb-0 ms-2">Create stunning visual charts and graphs</span>
+        </div>
+    </div>
+</div>
+
+<div class="card border-0 shadow rounded-4 mt-5 p-4">
+    <div class="card-body">
+        <form [formGroup]="AddGraphicalCard">
+            <div class="mb-3">
+                <label class="form-label fw-semibold">
+                    <span class="text-primary">&#9679;</span> Card Title
+                </label>
+
+                <input type="text" class="form-control focus-black-border" name="cardTitle" formControlName="cardTitle"
+                    placeholder="Enter card title">
+            </div>
+
+            <div class="mb-3 mt-4">
+                <label class="form-label fw-semibold"> <span class="text-success">&#9679;</span> Description</label>
+                <textarea class="form-control focus-black-border" name="cardDescription"
+                    formControlName="cardDescription" rows="3" placeholder="Decribe your card"></textarea>
+            </div>
+            <div class="mb-3 mt-4">
+                <label class="form-label fw-semibold"> <span class="text-purple">&#9679;</span> URL</label>
+                <input type="text" class="form-control focus-black-border" name="url" formControlName="url"
+                    placeholder="https://example.com">
+            </div>
+            <div class="mb-3 mt-4">
+                <div class="card bg-blue text-primary p-4 mb-3 bg-light-green rounded-4" style="border-color:#BCF6DB">
+                    <label class="form-label fw-semibold text-dark-green"><i
+                            class="bi bi-bar-chart-line me-2 text-dark-green">
+                        </i>Chart Type</label>
+                    <select class="form-select focus-black-border" formControlName="graphType">
+                        <option *ngFor="let option of GraphType" [value]="option.value">
+                            <i [ngClass]="'bi ' + option.value"></i> {{ option.label }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4">
+            <div class="d-flex gap-2 mt-3">
+                <button (click)="submitGraphicalCard()" [disabled]="AddGraphicalCard.invalid"
+                    class="btn btn-green-gradient">
+                    Create Card
+                </button>
+                <button (click)="hideCardDetails()" class="btn border-grey px-5">
+                    Cancel
+                </button>
+                <button *ngIf="editCard" (click)="deleteCard()" class="btn btn-danger">
+                    Delete
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
