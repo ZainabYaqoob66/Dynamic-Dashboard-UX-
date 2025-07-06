@@ -39,6 +39,10 @@ html {
   background-color: #EEFDF7 !important;
 }
 
+.bg-light-purple {
+  background-color: #FBF4FD !important;
+}
+
 .text-dark-blue {
   color: #315FDC !important;
 }
@@ -49,6 +53,10 @@ html {
 
 .text-purple {
   color: #A855F7 !important;
+}
+
+.text-dark-purple {
+  color: #832BD0 !important;
 }
 
 .blue-gradient-card {
@@ -67,6 +75,14 @@ html {
   box-shadow: 0 12px 35px rgb(85 85 85 / 30%) !important;
 }
 
+.purple-gradient-card {
+  background: linear-gradient(to right, #a855f7, #db2777) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 12px 35px rgb(85 85 85 / 30%) !important;
+}
+
 .btn-blue-gradient {
   background: linear-gradient(to right, #3b82f6, #4f46e5) !important;
   color: white !important;
@@ -79,6 +95,16 @@ html {
 
 .btn-green-gradient {
   background: linear-gradient(to right, #10b981, #0d9488) !important;
+  color: white !important;
+  opacity: 1 !important;
+  padding: 10px 25px !important;
+  border-radius: 12px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+}
+
+.btn-purple-gradient {
+  background: linear-gradient(to right, #A855F7, #DB2777) !important;
   color: white !important;
   opacity: 1 !important;
   padding: 10px 25px !important;

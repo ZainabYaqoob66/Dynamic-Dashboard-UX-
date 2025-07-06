@@ -26,18 +26,18 @@
                     <span class="text-primary">&#9679;</span> Card Title
                 </label>
 
-                <input type="text" class="form-control focus-black-border" name="cardTitle" formControlName="cardTitle"
+                <input type="text" class="form-control " name="cardTitle" formControlName="cardTitle"
                     placeholder="Enter card title">
             </div>
 
             <div class="mb-3 mt-4">
                 <label class="form-label fw-semibold"> <span class="text-success">&#9679;</span> Description</label>
-                <textarea class="form-control focus-black-border" name="cardDescription"
-                    formControlName="cardDescription" rows="3" placeholder="Decribe your card"></textarea>
+                <textarea class="form-control " name="cardDescription" formControlName="cardDescription" rows="3"
+                    placeholder="Decribe your card"></textarea>
             </div>
             <div class="mb-3 mt-4">
                 <label class="form-label fw-semibold"> <span class="text-purple">&#9679;</span> URL</label>
-                <input type="text" class="form-control focus-black-border" name="url" formControlName="url"
+                <input type="text" class="form-control " name="url" formControlName="url"
                     placeholder="https://example.com">
             </div>
             <div class="mb-3 mt-4">
@@ -45,7 +45,7 @@
                     <label class="form-label fw-semibold text-dark-green"><i
                             class="bi bi-bar-chart-line me-2 text-dark-green">
                         </i>Chart Type</label>
-                    <select class="form-select focus-black-border" formControlName="graphType">
+                    <select class="form-select " formControlName="graphType">
                         <option *ngFor="let option of GraphType" [value]="option.value">
                             <i [ngClass]="'bi ' + option.value"></i> {{ option.label }}
                         </option>
