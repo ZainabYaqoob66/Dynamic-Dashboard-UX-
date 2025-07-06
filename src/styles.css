@@ -3,7 +3,7 @@ html {
   font-family: var(--font-camera-plain), "Camera Plain Variable", ui-sans-serif, system-ui, sans-serif;
 }
 
-.btn-primary{
+.btn-primary {
   background-color: #14B8A6 !important;
   color: white !important;
   border-color: #14B8A6 !important;
@@ -12,11 +12,57 @@ html {
   font-size: 14px !important;
 }
 
-.btn-secondary{
+.btn-secondary {
   background-color: white !important;
   color: black !important;
   border-color: #e6e6e6 !important;
   opacity: 1 !important;
   padding: 10px 23px !important;
   font-size: 14px !important;
+}
+
+.form-control {
+  padding: 12px !important;
+  border-radius: 10px !important;
+}
+
+.form-select {
+  padding: 12px !important;
+  border-radius: 15px !important;
+}
+
+.bg-light-blue {
+  background-color: #EFF5FF !important;
+}
+
+.text-dark-blue {
+  color: #315FDC !important;
+}
+
+.text-purple {
+  color: #A855F7 !important;
+}
+
+.blue-gradient-card {
+  background: linear-gradient(to right, #3b82f6, #4f46e5) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 12px 35px rgb(85 85 85 / 30%) !important;
+}
+
+.btn-blue-gradient {
+  background: linear-gradient(to right, #3b82f6, #4f46e5) !important;
+  color: white !important;
+  opacity: 1 !important;
+  padding: 10px 25px !important;
+  border-radius: 12px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+}
+
+.border-grey {
+  border-color: rgb(160, 159, 159) !important;
+  border-radius: 12px !important;
+  margin-left: 3px;
 }

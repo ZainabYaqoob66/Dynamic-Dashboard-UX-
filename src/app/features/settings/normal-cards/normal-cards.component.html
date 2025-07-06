@@ -1,60 +1,68 @@
-<div class="card border-0">
-  <div class="bg-transparent border-0 mb-2 d-flex justify-content-between align-items-center">
-    <h5 class="card-title mb-0 fw-bold">Normal Card</h5>
-    <button class="btn btn-sm btn-light border-0" (click)="hideCardDetails()" aria-label="Close">
-      <i class="bi bi-x-lg"></i>
-    </button>
-  </div>
+<div class="card border-0 blue-gradient-card mt-3 p-4 rounded-4">
+    <div class="d-flex align-items-center gap-3">
+        <button class="btn btn-sm btn-light border-0 rounded-3 p-2 px-3" style="background-color: #6398F7;">
+            <i class="bi bi-grid-3x3 text-white fs-4"></i>
+        </button>
+
+        <!-- Flex Container for Title + Cross Button -->
+        <div class="flex-grow-1">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title mb-0 fw-bold p-1">
+                    Create Normal Card
+                </h5>
+                <span class="text-white ms-2" style="cursor: pointer;">
+                    <i class="bi bi-x fs-5"></i>
+                </span>
+            </div>
+            <i class="bi bi-stars"></i>
+            <span class="mb-0 ms-2">Design a simple, elegant card for your dashboard</span>
+        </div>
+    </div>
+</div>
+
+<div class="card border-0 shadow rounded-4 mt-5 p-4">
     <div class="card-body">
         <form [formGroup]="AddNormalCard">
             <div class="mb-3">
-                <label class="form-label fw-semibold">Card Title:</label>
-                <input type="text" 
-                       class="form-control focus-black-border" 
-                       name="cardTitle" 
-                       formControlName="cardTitle" 
-                       placeholder="Enter card title">
+                <label class="form-label fw-semibold">
+                    <span class="text-primary">&#9679;</span> Card Title
+                </label>
+
+                <input type="text" class="form-control focus-black-border" name="cardTitle" formControlName="cardTitle"
+                    placeholder="Enter card title">
             </div>
 
-            <div class="mb-3">
-                <label class="form-label fw-semibold">Card Description:</label>
-                <textarea class="form-control focus-black-border" 
-                          name="cardDescription" 
-                          formControlName="cardDescription" 
-                          rows="3"
-                          placeholder="Enter card description"></textarea>
+            <div class="mb-3 mt-4">
+                <label class="form-label fw-semibold"> <span class="text-success">&#9679;</span> Description</label>
+                <textarea class="form-control focus-black-border" name="cardDescription"
+                    formControlName="cardDescription" rows="3" placeholder="Decribe your card"></textarea>
             </div>
-            <div class="mb-3">
-                <label class="form-label fw-semibold">Url:</label>
-                <input type="text" 
-                       class="form-control focus-black-border" 
-                       name="url" 
-                       formControlName="url" 
-                       placeholder="Enter URL">
+            <div class="mb-3 mt-4">
+                <label class="form-label fw-semibold"> <span class="text-purple">&#9679;</span> URL</label>
+                <input type="text" class="form-control focus-black-border" name="url" formControlName="url"
+                    placeholder="https://example.com">
             </div>
-            <div class="mb-3">
-                <label class="form-label fw-semibold">Icon:</label>
-                <select class="form-select focus-black-border" 
-                        formControlName="icon">
-                    <option *ngFor="let option of iconOptions" 
-                            [value]="option.value">
-                        <i [ngClass]="option.value"></i> {{ option.label }}
-                    </option>
-                </select>
+            <div class="mb-3 mt-4">
+                <div class="card bg-blue text-primary p-4 mb-3 bg-light-blue rounded-4" style="border-color:#bbd5ff">
+                    <label class="form-label fw-semibold text-dark-blue"><i
+                            class="bi bi-camera me-2 text-text-dark-blue">
+                        </i>Icon</label>
+                    <select class="form-select focus-black-border" formControlName="icon">
+                        <option *ngFor="let option of iconOptions" [value]="option.value">
+                            <i [ngClass]="option.value"></i> {{ option.label }}
+                        </option>
+                    </select>
+                </div>
             </div>
+            <hr class="mt-4 mb-4">
             <div class="d-flex gap-2 mt-3">
-                <button (click)="submitNormalCard()" 
-                        [disabled]="AddNormalCard.invalid"
-                        class="btn btn-primary">
-                    Add
+                <button (click)="submitNormalCard()" [disabled]="AddNormalCard.invalid" class="btn btn-blue-gradient">
+                    Create Card
                 </button>
-                <button (click)="hideCardDetails()" 
-                        class="btn btn-secondary fw-semibold">
+                <button (click)="hideCardDetails()" class="btn border-grey px-4">
                     Cancel
                 </button>
-                <button *ngIf="editCard" 
-                        (click)="deleteCard()" 
-                        class="btn btn-danger">
+                <button *ngIf="editCard" (click)="deleteCard()" class="btn btn-danger">
                     Delete
                 </button>
             </div>
