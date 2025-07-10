@@ -5,15 +5,20 @@ import { GraphicalCardsComponent } from './features/settings/graphical-cards/gra
 import { TableCardsComponent } from './features/settings/table-cards/table-cards.component';
 import { LayoutComponent } from './features/full-layout/layout/layout.component';
 import { NavBarComponent } from './features/full-layout/nav-bar/nav-bar.component';
+import { RegisterComponent } from './features/authentication/register/register.component';
 export const routes: Routes = [
     {
         path: 'login',
-        component: LayoutComponent,
+        component: LoginComponent,
+    },
+    {
+        path: 'register',
+        component: RegisterComponent,
     },
     {
         path: '',
         redirectTo: 'login',
-        pathMatch: 'full' 
+        pathMatch: 'full'
     },
     {
         path: '**',

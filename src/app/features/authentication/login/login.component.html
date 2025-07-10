@@ -1,15 +1,40 @@
-<form [formGroup]="loginForm"  class="w-50 mx-auto mt-5">
-    <div class="mb-3">
-        <label for="email" class="form-label">Email address</label>
-        <input type="email" class="form-control"  id="email"
-            formControlName="email" placeholder="Enter email" />
+<div class="d-flex justify-content-center align-items-center flex-column vh-100">
+    <div class="d-flex justify-content-center align-items-center">
+        <img src="/images/Logo.jpg" alt="Logo" width="100" height="100">
     </div>
+    <h1 class="login-header">Welcome Back</h1>
+    <h5 class="text-muted mt-2">Sign in to your DashCraft account</h5>
+    
+    <!-- Updated Card with responsive sizing -->
+    <div class="card border-0 shadow p-3 p-md-5 mt-3 mt-md-5 rounded-4 mx-3" style="width: 100%; max-width: 450px; min-width: 300px;">
+        <div class="card-body">
+            <form [formGroup]="loginForm" class="mx-auto">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" formControlName="email"
+                        placeholder="Enter your email" />
+                </div>
 
-    <div class="mb-3">
-        <label for="password" class="form-label">Password</label>
-        <input type="password" class="form-control"
-            id="password" formControlName="password" placeholder="Password" />
+                <div class="mb-3 mt-4">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" formControlName="password"
+                        placeholder="Enter your password" />
+                </div>
+                
+                <div class="mb-3 form-check d-flex align-items-center">
+                    <input type="checkbox" class="form-check-input" id="rememberMe" formControlName="rememberMe">
+                    <label class="form-check-label ms-2" for="rememberMe">Remember me</label>
+                    <div class="d-flex ms-auto">
+                        <a class="text-decoration-none fw-semibold" style="color: rgb(80, 9, 195);" href="#">Forgot password?</a>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-purple-gradient w-100 p-3 mt-4">Login</button>
+                
+                <p class="text-center mt-3">
+                    Don't have an account? <a class="text-decoration-none fw-semibold" style="color: rgb(80, 9, 195); cursor: pointer;" (click)="navigateToRegister()">Sign up here</a>
+                </p>
+            </form>
+        </div>
     </div>
-
-    <button type="submit" class="btn btn-primary w-100">Login</button>
-</form>
+</div>

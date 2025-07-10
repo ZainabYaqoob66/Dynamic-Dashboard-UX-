@@ -3,6 +3,10 @@ html {
   font-family: var(--font-camera-plain), "Camera Plain Variable", ui-sans-serif, system-ui, sans-serif;
 }
 
+.body {
+  font-size: 1rem !important;
+}
+
 .btn-primary {
   background-color: #14B8A6 !important;
   color: white !important;
@@ -117,4 +121,15 @@ html {
   border-color: rgb(160, 159, 159) !important;
   border-radius: 12px !important;
   margin-left: 3px;
+}
+
+.vh-50 {
+  height: 50vh !important;
+}
+
+.login-header {
+  background: linear-gradient(to left, #1e293b 0%, #4338ca 50%, #7e22ce 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
 }
